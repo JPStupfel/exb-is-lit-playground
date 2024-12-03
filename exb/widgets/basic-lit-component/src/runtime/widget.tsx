@@ -13,6 +13,8 @@ import { WidgetPlaceholder } from 'jimu-ui';
 // #endregion --------- 3rd-Party Components / Libraries -----------------------
 
 // #region -------------- Custom Components / Utilities ------------------------
+import 'lit-components/basic-lit-component';
+
 import { isMapViewConfigured } from './widget.utilities';
 // #endregion ----------- Custom Components / Utilities ------------------------
 
@@ -62,6 +64,9 @@ const Widget = (props: Props) => {
   return (
     <div className="jimu-widget widget-basic-lit-component">
       Add a Lit Component Here!
+      <basic-lit-component>
+        <p>This is child content</p>
+      </basic-lit-component>
     </div>
   );
   // #endregion -------------------- Render ------------------------------------

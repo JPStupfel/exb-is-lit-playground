@@ -10,4 +10,5 @@ export const LOCAL_DIRECTORIES = {
   BUILD: './exb/dist',
   THEMES: './exb/themes',
   WIDGETS: './exb/widgets',
+  LIT: './components/dist',
 };

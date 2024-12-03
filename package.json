@@ -2,6 +2,7 @@
   "name": "exb-is-lit-playground",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "description": "Experience Builder applications and widgets, Lit web components, and related scripts and tooling.",
   "homepage": "https://github.com/thollingshead/exb-is-lit-playground#readme",
   "author": "Esri - Professional Services",
@@ -16,12 +17,16 @@
     "url": "https://github.com/thollingshead/exb-is-lit-playground.git"
   },
   "scripts": {
-    "postinstall": "node ./.scripts/install.mjs",
+    "postinstall": "node ./.scripts/install.mjs && node ./.scripts/add-lit-components.mjs",
     "prepare": "husky install",
-    "start": "npx concurrently \"npm run-script start:server\" \"npm run-script start:client\"",
-    "start:client": "cd ArcGISExperienceBuilder/client && npm start",
-    "start:server": "cd ArcGISExperienceBuilder/server && npm start",
-    "build": "node ./.scripts/export.mjs"
+    "build:exb": "node ./.scripts/export.mjs",
+    "build:lit": "cd components && tsc",
+    "build": "concurrently \"npm run-script build:exb\" \"npm run-script build:lit\"",
+    "start:exb": "concurrently \"npm run-script start:exb:server\" \"npm run-script start:exb:client\"",
+    "start:exb:client": "cd ArcGISExperienceBuilder/client && npm start",
+    "start:exb:server": "cd ArcGISExperienceBuilder/server && npm start",
+    "start:lit": "cd components && tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"web-dev-server\"",
+    "start": "concurrently \"npm run-script start:exb\" \"npm run-script start:lit\""
   },
   "keywords": [
     "ArcGIS Experience Builder",
@@ -30,6 +35,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@web/dev-server": "^0.4.6",
     "adm-zip": "^0.5.10",
     "concurrently": "^8.2.2",
     "filenamify": "^6.0.0",
@@ -37,6 +43,11 @@
     "lint-staged": "^15.2.2",
     "lnk": "^1.1.0",
     "pluralize": "^8.0.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "lit": "^3.2.1"
   }
 }
