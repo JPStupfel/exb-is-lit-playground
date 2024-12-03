@@ -25,16 +25,16 @@ jobs:
         run: npm run build
 
       - name: Unzip
-        working-directory: dist/apps
+        working-directory: exb/dist/apps
         run: find -name '*.zip' -exec sh -c 'unzip -d "${1%_[0-9.]*.zip}" "$1"' _ {} \;
 
       - name: Cleanup
-        working-directory: dist/apps
+        working-directory: exb/dist/apps
         run: rm *.zip
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           clean-exclude: 'pr-preview'
-          folder: dist/apps
+          folder: exb/dist/apps
           force: false

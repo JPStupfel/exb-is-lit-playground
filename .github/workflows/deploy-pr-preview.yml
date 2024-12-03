@@ -27,15 +27,15 @@ jobs:
         run: npm run build
 
       - name: Unzip
-        working-directory: dist/apps
+        working-directory: exb/dist/apps
         run: find -name '*.zip' -exec sh -c 'unzip -d "${1%_[0-9.]*.zip}" "$1"' _ {} \;
 
       - name: Cleanup
-        working-directory: dist/apps
+        working-directory: exb/dist/apps
         run: rm *.zip
 
       - name: Deploy to GitHub Pages
         uses: rossjrw/pr-preview-action@v1
         with:
           action: deploy
-          source-dir: dist/apps
+          source-dir: exb/dist/apps
