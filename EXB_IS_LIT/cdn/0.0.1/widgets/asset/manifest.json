@@ -1,0 +1,17 @@
+{
+  "name": "asset",
+  "label": "Asset",
+  "type": "widget",
+  "version": "1.0.0",
+  "exbVersion": "1.15.0",
+  "author": "Esri Professional Services",
+  "description": "Asset Widget",
+  "properties": {},
+  "translatedLocales": [
+    "en"
+  ],
+  "defaultSize": {
+    "width": 800,
+    "height": 500
+  }
+}

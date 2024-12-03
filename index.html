@@ -1,0 +1,55 @@
+<html>
+        <head>
+          <meta charset="utf-8" />
+          <meta
+            name="viewport"
+            content="initial-scale=1, maximum-scale=1, user-scalable=no"
+          />
+          <script
+            type="module"
+            src="https://js.arcgis.com/calcite-components/2.13.0/calcite.esm.js"
+          ></script>
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://js.arcgis.com/calcite-components/2.13.0/calcite.css"
+          />
+          <style>
+            a {
+              text-decoration: none;
+              color: var(--calcite-color-text-1);
+            }
+
+            calcite-card {
+              width: 15.25rem;
+            }
+
+            calcite-card-group {
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          </style>
+        </head>
+
+        <body>
+          <calcite-card-group label="Applications">
+            
+              <a href="./EXB_IS_LIT">
+                <calcite-card label="EXB_IS_LIT">
+                  <img
+                    slot="thumbnail"
+                    alt="EXB_IS_LIT"
+                    src="./EXB_IS_LIT/cdn/0.0.1/null"
+                  />
+                  <h2 slot="heading">EXB_IS_LIT</h2>
+                  <div slot="footer-start">28682024101112504340656_usfs</div>
+                  <div slot="footer-end">
+                    <calcite-chip>0.0.1</calcite-chip>
+                  </div>
+                </calcite-card>
+              </a>
+          </calcite-card-group>
+        </body>
+      </html>
