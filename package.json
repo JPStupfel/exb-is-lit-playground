@@ -1,0 +1,42 @@
+{
+  "name": "exb-is-lit-playground",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Experience Builder applications and widgets, Lit web components, and related scripts and tooling.",
+  "homepage": "https://github.com/thollingshead/exb-is-lit-playground#readme",
+  "author": "Esri - Professional Services",
+  "contributors": [
+    {
+      "name": "Tim Hollingshead",
+      "email": "thollingshead@esri.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thollingshead/exb-is-lit-playground.git"
+  },
+  "scripts": {
+    "postinstall": "node ./.scripts/install.mjs",
+    "prepare": "husky install",
+    "start": "npx concurrently \"npm run-script start:server\" \"npm run-script start:client\"",
+    "start:client": "cd ArcGISExperienceBuilder/client && npm start",
+    "start:server": "cd ArcGISExperienceBuilder/server && npm start",
+    "build": "node ./.scripts/export.mjs"
+  },
+  "keywords": [
+    "ArcGIS Experience Builder",
+    "Experience Builder"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "adm-zip": "^0.5.10",
+    "concurrently": "^8.2.2",
+    "filenamify": "^6.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "lnk": "^1.1.0",
+    "pluralize": "^8.0.0",
+    "prettier": "^3.2.5"
+  }
+}

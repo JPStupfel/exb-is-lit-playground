@@ -1,0 +1,25 @@
+{
+  "created": 1733249577137,
+  "description": "",
+  "id": "0",
+  "modified": 1733249980557,
+  "owner": "28682024101112504340656_usfs",
+  "tags": [],
+  "thumbnail": null,
+  "title": "Untitled experience 1",
+  "type": "Web Experience",
+  "snippet": "",
+  "typeKeywords": [
+    "EXB Experience",
+    "Ready To Use",
+    "JavaScript",
+    "status: Published",
+    "version:1.15.0",
+    "publishVersion:1.15.0"
+  ],
+  "portalUrl": "https://usfs.maps.arcgis.com",
+  "username": "28682024101112504340656_usfs",
+  "name": "Untitled experience 1",
+  "isLocalApp": true,
+  "url": null
+}

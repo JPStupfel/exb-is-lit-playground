@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+npx --no -- commitlint -g .config/.commitlintrc.ts --edit "$1"
