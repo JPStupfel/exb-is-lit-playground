@@ -15,5 +15,5 @@ __pycache__/
 ## Experience Builder
 ArcGISExperienceBuilder/
 ## Build Files
-apps/apps/**/download-times.json
+exb/apps/**/download-times.json
 dist/
