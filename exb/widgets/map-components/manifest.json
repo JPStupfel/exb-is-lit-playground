@@ -1,0 +1,15 @@
+{
+  "name": "map-components",
+  "label": "Map Components",
+  "type": "widget",
+  "version": "1.0.0",
+  "exbVersion": "1.15.0",
+  "author": "Esri Professional Services",
+  "description": "Map Components Widget",
+  "properties": {},
+  "translatedLocales": ["en"],
+  "defaultSize": {
+    "width": 800,
+    "height": 500
+  }
+}
