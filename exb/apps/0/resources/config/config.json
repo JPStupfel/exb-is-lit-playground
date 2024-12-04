@@ -48,12 +48,12 @@
           "type": "WIDGET",
           "widgetId": "widget_2",
           "bbox": {
-            "left": "0%",
-            "right": "77.9%",
-            "top": "0%",
-            "bottom": "0%",
-            "width": "50.00px",
-            "height": "100%"
+            "left": "0.0%",
+            "right": "95.6%",
+            "top": "0.0%",
+            "bottom": "0.0%",
+            "width": "56px",
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -1685,7 +1685,7 @@
     },
     "backgroundColor": "var(--primary-600)"
   },
-  "timestamp": 1733267670709,
+  "timestamp": 1733343710939,
   "footer": {
     "layout": {
       "LARGE": "layout_9"
