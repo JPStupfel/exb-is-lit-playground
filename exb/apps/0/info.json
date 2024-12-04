@@ -3,7 +3,7 @@
   "description": "",
   "id": "0",
   "modified": 1733267672153,
-  "owner": "28682024101112504340656_usfs",
+  "owner": "THollingshead@esri.com_prof_services",
   "tags": [],
   "thumbnail": null,
   "title": "EXB_IS_LIT",
@@ -17,8 +17,8 @@
     "version:1.15.0",
     "publishVersion:1.15.0"
   ],
-  "portalUrl": "https://usfs.maps.arcgis.com",
-  "username": "28682024101112504340656_usfs",
+  "portalUrl": "https://prof-services.maps.arcgis.com",
+  "username": "THollingshead@esri.com_prof_services",
   "name": "EXB_IS_LIT",
   "isLocalApp": true,
   "url": null
