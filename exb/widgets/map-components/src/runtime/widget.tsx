@@ -14,6 +14,8 @@ import { WidgetPlaceholder } from 'jimu-ui';
 
 // #region -------------- Custom Components / Utilities ------------------------
 import 'lit-components/map-component';
+import { MapComponent } from 'lit-components/map-component';
+import { createComponent } from '@lit/react';
 
 import { isMapViewConfigured } from './widget.utilities';
 // #endregion ----------- Custom Components / Utilities ------------------------
@@ -22,7 +24,6 @@ import { isMapViewConfigured } from './widget.utilities';
 import icon from '../../icon.svg';
 import defaultMessages from './translations/default';
 import { type Props } from './widget.types';
-import { JsxEmit } from 'typescript';
 import { JimuMapViewComponent } from 'jimu-arcgis';
 // #endregion --------------------- Resources ----------------------------------
 // #endregion ====================== IMPORTS ===================================
@@ -34,7 +35,6 @@ const Widget = (props: Props) => {
 
   // #region -------------------- Hooks (State) --------------------------------
   const [activeView, setActiveView] = React.useState(null);
-  const [zoom, setZoom] = React.useState(99);
   // #endregion ----------------- Hooks (State) --------------------------------
 
   // #region ----------------- Hooks (Memoization) -----------------------------
@@ -57,15 +57,14 @@ const Widget = (props: Props) => {
     );
   }
 
-  // useEffect that uses reactive utils to watch the activeView.view.zoom and sets it to state
-  React.useEffect(() => {
-    if (activeView) {
-      const handle = activeView.view.watch('zoom', (zoom) => {
-        setZoom(zoom);
-      });
-      return () => handle.remove();
-    }
-  }, [activeView]);
+  // using the createComponent function from @lit/react to create a react component from the lit-element component
+  // per https://lit.dev/docs/frameworks/react/#how-it-works-1
+  // as otherwise the componnent wasn't picking up on the reactive state changes of the webmap view
+  const MapComponents = createComponent({
+    tagName: 'map-component',
+    react: React,
+    elementClass: MapComponent,
+  });
   // #endregion ------- Short-Circuit (Invalid Settings) -----------------------
 
   // #region ---------------- Supporting Functions -----------------------------
@@ -77,11 +76,10 @@ const Widget = (props: Props) => {
   // #region ----------------------- Render ------------------------------------
   return (
     <div className="jimu-widget widget-map-components">
-      <map-component map={zoom}></map-component>
+      <MapComponents map={activeView?.view} item="view"></MapComponents>
       <JimuMapViewComponent
         useMapWidgetId={props.useMapWidgetIds?.[0]}
         onActiveViewChange={(mv) => {
-          console.log('active view changed');
           setActiveView(mv);
         }}
       />

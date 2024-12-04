@@ -11,12 +11,17 @@ export class MapComponent extends LitElement {
     }
   `;
 
-  @property({ type: String }) map = 'hello';
+  @property({ type: Object }) map = {};
+  @property({ type: String }) item = '';
 
   override render() {
-    return html` <div>Add some map components here ${this.map}</div> `;
+    return html`
+      <button @click=${() => console.log('map', this.map)}>Log Map</button>
+    `;
   }
 }
+// <button @click=${() => console.log('item', JimuMapView)}>Log Item</button>
+// <div>Zoom Level: ${this.map?.view?.zoom ?? 'N/A'}</div>
 
 declare global {
   interface HTMLElementTagNameMap {

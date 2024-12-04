@@ -48,6 +48,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "@lit/react": "^1.0.6",
     "lit": "^3.2.1"
   }
 }
